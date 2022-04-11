@@ -1,35 +1,38 @@
-import {FormControl, FormHelperText, FormErrorMessage, FormLabel, Input} from '@chakra-ui/react';
-import {Field, FieldProps} from 'formik';
+import {FormControl, FormErrorMessage, FormHelperText, FormLabel, Input} from '@chakra-ui/react';
+import {Field, FieldProps, getIn} from 'formik';
 import React, {useState} from 'react';
 
 export interface SimpleFieldProps {
 	name: string;
+	label?: string;
+	validate?: string;
 	helperText?: string;
 }
 
-const SimpleField: React.FC<React.PropsWithChildren<SimpleFieldProps>> = ({name, helperText}: React.PropsWithChildren<SimpleFieldProps>) => {
-	const [input, setInput] = useState('');
-
-	const handleInputChange = (e: any) => setInput(e.target.value);
-
-	const isError = input === '';
-
+const SimpleField: React.FC<React.PropsWithChildren<SimpleFieldProps>> = ({
+																			  name,
+	label,
+																			  helperText
+																		  }: React.PropsWithChildren<SimpleFieldProps>) => {
 	return (
 		<Field name={name}>
-			{({field: {value, onChange}}: FieldProps) => {
+			{({field: {value, onChange}, form: {errors}, meta}: FieldProps) => {
+				const error = getIn(errors, name);
 				return (
-					<FormControl isInvalid={true}>
-						<FormLabel>EMAIL</FormLabel>
-						<Input
-							name={name}
-							value={value}
-							onChange={(event) => {
-								onChange(event);
-							}}
-						/>
-						{!!helperText && <FormHelperText>{helperText}</FormHelperText>}
-						{<FormErrorMessage>ERROR</FormErrorMessage>}
-					</FormControl>
+					<>
+						<FormControl isInvalid={!!error}>
+							{!!label && <FormLabel>{label}</FormLabel>}
+							<Input
+								name={name}
+								value={value}
+								onChange={(event) => {
+									onChange(event);
+								}}
+							/>
+							{!!helperText && <FormHelperText>{helperText}</FormHelperText>}
+							{!!error && <FormErrorMessage>{error}</FormErrorMessage>}
+						</FormControl>
+					</>
 				);
 			}}
 		</Field>

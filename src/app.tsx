@@ -5,9 +5,9 @@ import SimpleField from './simple-field';
 
 export function App() {
 	return <ChakraProvider>
-		<Formik initialValues={{name: ''}} onSubmit={console.log}>
+		<Formik initialValues={{name: ''}} validate={values => (values.name ? {} : {name: "required"})} onSubmit={console.log}>
 			<Form>
-				<SimpleField name={'name'}/>
+				<SimpleField label={'Name'} name={'name'}/>
 				<button type={'submit'}>Submit</button>
 			</Form>
 		</Formik>
