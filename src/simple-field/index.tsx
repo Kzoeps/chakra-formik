@@ -1,6 +1,6 @@
 import {FormControl, FormErrorMessage, FormHelperText, FormLabel, Input} from '@chakra-ui/react';
 import {Field, FieldProps, getIn} from 'formik';
-import React, {useState} from 'react';
+import React from 'react';
 
 export interface SimpleFieldProps {
 	name: string;
