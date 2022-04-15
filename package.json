@@ -6,7 +6,8 @@
   "author": "kzoeps <kzoepa@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "parcel src/index.html"
+    "start": "parcel src/index.html",
+	"test": "jest --coverage"
   },
   "dependencies": {
     "@chakra-ui/react": "^1.8.7",
