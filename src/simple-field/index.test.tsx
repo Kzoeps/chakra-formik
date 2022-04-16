@@ -3,13 +3,13 @@ import React from 'react';
 import SimpleField from './index';
 import {render, waitFor} from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import '@testing-library/jest-dom/extend-expect';
 
 const InputContainer = ({initValue = 'init value'}: {initValue?: string}) => {
 	return (
 		<Formik initialValues={{field: initValue}} onSubmit={() => {}}>
 			<Form>
 				<SimpleField data-testid="input-field" name={'field'}/>
-				<p data-testid="testing">HELLO</p>
 			</Form>
 		</Formik>
 	);
@@ -31,4 +31,11 @@ test('should change value', async () => {
 	const input = getByTestId('input-field') as HTMLInputElement;
 	await userEvent.type(input, 'new value');
 	await waitFor(() => expect(input.value).toBe('new value'));
-})
+});
+
+test('should be in focus', async () => {
+	const {getByTestId} = render(<InputContainer initValue=""/>);
+	const input = getByTestId('input-field') as HTMLInputElement;
+	await userEvent.click(input);
+	expect(input).toHaveFocus();
+});
