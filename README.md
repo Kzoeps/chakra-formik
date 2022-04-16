@@ -9,7 +9,7 @@ I know there's already a package for this but this is my experimental playground
 2. making a reusable package
 3. publishing it
 
-this is also heavily inspired *cough (copy pasting)* by [formik-antd](https://github.com/jannikbuschke/formik-antd).
+this is also heavily inspired (*cough (copy-pasting)*) by [formik-antd](https://github.com/jannikbuschke/formik-antd).
 
 # TODOs
 - [ ] simple input field
