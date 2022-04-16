@@ -1,9 +1,15 @@
-import React from "react";
+import React from 'react';
 import {ChakraProvider} from '@chakra-ui/react';
+import {Formik, Form} from 'formik';
+import SimpleField from './simple-field';
 
 export function App() {
-  return <ChakraProvider>
-	  <h1>Hello world!</h1>
-	  <h1>Hola como estas</h1>
-  </ChakraProvider>;
+	return <ChakraProvider>
+		<Formik initialValues={{name: ''}} validate={values => (values.name ? {} : {name: "required"})} onSubmit={console.log}>
+			<Form>
+				<SimpleField label={'Name'} name={'name'}/>
+				<button type={'submit'}>Submit</button>
+			</Form>
+		</Formik>
+	</ChakraProvider>;
 }
