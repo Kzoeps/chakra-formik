@@ -12,26 +12,28 @@ export interface SimpleFieldProps {
 const SimpleField: React.FC<React.PropsWithChildren<SimpleFieldProps>> = ({
 																			  name,
 	label,
-																			  helperText
+																			  helperText,
+	...restProps
 																		  }: React.PropsWithChildren<SimpleFieldProps>) => {
 	return (
 		<Field name={name}>
 			{({field: {value, onChange}, form: {errors}, meta}: FieldProps) => {
-				const error = getIn(errors, name);
+				// const error = getIn(errors, name);
 				return (
 					<>
-						<FormControl isInvalid={!!error}>
-							{!!label && <FormLabel>{label}</FormLabel>}
+						{/*<FormControl isInvalid={!!error}>*/}
+						{/*	{!!label && <FormLabel>{label}</FormLabel>}*/}
 							<Input
+								{...restProps}
 								name={name}
 								value={value}
 								onChange={(event) => {
 									onChange(event);
 								}}
 							/>
-							{!!helperText && <FormHelperText>{helperText}</FormHelperText>}
-							{!!error && <FormErrorMessage>{error}</FormErrorMessage>}
-						</FormControl>
+							{/*{!!helperText && <FormHelperText>{helperText}</FormHelperText>}*/}
+							{/*{!!error && <FormErrorMessage>{error}</FormErrorMessage>}*/}
+						{/*</FormControl>*/}
 					</>
 				);
 			}}

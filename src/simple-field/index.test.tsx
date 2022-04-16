@@ -1,19 +1,34 @@
 import {Form, Formik} from 'formik';
 import React from 'react';
 import SimpleField from './index';
-import {render} from '@testing-library/react';
+import {render, waitFor} from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
-const InputContainer = () => {
+const InputContainer = ({initValue = 'init value'}: {initValue?: string}) => {
 	return (
-		<Formik initialValues={{field: 'init value'}} onSubmit={() => {}}>
+		<Formik initialValues={{field: initValue}} onSubmit={() => {}}>
 			<Form>
-				<SimpleField name={'field'}/>
+				<SimpleField data-testid="input-field" name={'field'}/>
+				<p data-testid="testing">HELLO</p>
 			</Form>
 		</Formik>
 	);
 };
 
-test('1 + 1 is equal to 2', () => {
-	const {getByTestId} = render(<InputContainer/>);
-	expect(1 + 1).toBe(2);
+test('input should be defined', () => {
+	const {getByTestId, debug} = render(<InputContainer/>);
+	expect(getByTestId('input-field')).toBeDefined();
 });
+
+
+test('input should have an initial value of init value', () => {
+	const {getByTestId} = render(<InputContainer/>);
+	expect((getByTestId('input-field') as HTMLInputElement).value).toBe('init value');
+});
+
+test('should change value', async () => {
+	const {getByTestId} = render(<InputContainer initValue=""/>);
+	const input = getByTestId('input-field') as HTMLInputElement;
+	await userEvent.type(input, 'new value');
+	await waitFor(() => expect(input.value).toBe('new value'));
+})
