@@ -2,12 +2,12 @@
   "name": "chakra-formik",
   "version": "0.1.0",
   "description": "a package to bind chakra ui forms with formik",
-  "main": "index.js",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
   "keywords": ["formik", "chakra", "react"],
   "author": "kzoeps <kzoepa@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "parcel src/index.html",
     "test": "jest"
   },
   "dependencies": {},
