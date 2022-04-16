@@ -4,18 +4,28 @@
   "description": "a package to bind chakra ui forms with formik",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
-  "keywords": ["formik", "chakra", "react"],
+  "module": "./es/index.js",
+  "keywords": [
+	"formik",
+	"chakra",
+	"react"
+  ],
   "author": "kzoeps <kzoepa@gmail.com>",
   "license": "MIT",
+  "files": [
+	"lib",
+	"src"
+  ],
   "scripts": {
-    "test": "jest"
+	"test": "jest",
+	"build": "tsc && tsc -p tsconfig.es.json"
   },
   "dependencies": {},
   "peerDependencies": {
-    "@chakra-ui/react": "^1.8.7",
-    "@emotion/react": "^11",
-    "@emotion/styled": "^11",
-    "formik": "^2.2.9",
+	"@chakra-ui/react": "^1.8.7",
+	"@emotion/react": "^11",
+	"@emotion/styled": "^11",
+	"formik": "^2.2.9",
     "framer-motion": "^6",
     "react": "^17.0.0",
     "react-dom": "^17.0.0"

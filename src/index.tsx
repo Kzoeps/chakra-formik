@@ -1,1 +1,1 @@
-export * from './simple-field/index';
+export * from './simple-field';
