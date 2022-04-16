@@ -1,6 +1,6 @@
 {
   "name": "chakra-formik",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "a paclkage to bind chakra ui forms with formik",
   "main": "index.js",
   "author": "kzoeps <kzoepa@gmail.com>",
