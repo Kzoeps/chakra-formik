@@ -18,6 +18,7 @@
   "es"
  ],
  "scripts": {
+   "start": "parcel src/index.html -p 3000 --open",
   "test": "jest",
   "build": "tsc && tsc -p tsconfig.es.json"
  },

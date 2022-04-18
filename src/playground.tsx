@@ -1,15 +1,6 @@
-import React from "react";
-import {FormLabel} from '@chakra-ui/react';
+import React from 'react';
+import { render }from 'react-dom';
+import {App} from './app';
 
-export interface PlaygroundProps {
-}
-
-export const Playground: React.FC<React.PropsWithChildren<PlaygroundProps>> = (props: PlaygroundProps) => {
-    return (
-        <>
-			<p>dfhasdf</p>
-		</>
-    )
-}
-
-export default Playground;
+const app = document.getElementById('app');
+render(<App/>, app);

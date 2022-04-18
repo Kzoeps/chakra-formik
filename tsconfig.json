@@ -102,7 +102,7 @@
 	"node_modules",
 	"**/*.test.tsx",
 	"src/index.html",
-	"src/test.tsx",
+	"src/playground.tsx",
 	"jest.config.ts",
 	"lib",
 	"es"

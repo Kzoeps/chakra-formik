@@ -17,7 +17,7 @@ const SimpleField: React.FC<React.PropsWithChildren<SimpleFieldProps>> = ({
 																		  }: React.PropsWithChildren<SimpleFieldProps>) => {
 	return (
 		<Field name={name}>
-			{({field: {value, onChange}, form: {errors}, meta}: FieldProps) => {
+			{({field: {value, onChange, onBlur}, form: {touched}, meta}: FieldProps) => {
 				return (
 					<>
 							<Input
@@ -26,6 +26,9 @@ const SimpleField: React.FC<React.PropsWithChildren<SimpleFieldProps>> = ({
 								value={value}
 								onChange={(event) => {
 									onChange(event);
+								}}
+								onBlur={(event) => {
+									onBlur(event);
 								}}
 							/>
 					</>
