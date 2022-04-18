@@ -1,5 +1,5 @@
-import {FormControl, FormErrorMessage, FormHelperText, FormLabel, Input} from '@chakra-ui/react';
-import {Field, FieldProps, getIn} from 'formik';
+import {Input} from '@chakra-ui/react';
+import {Field, FieldProps} from 'formik';
 import React from 'react';
 
 export interface SimpleFieldProps {
@@ -11,18 +11,15 @@ export interface SimpleFieldProps {
 
 const SimpleField: React.FC<React.PropsWithChildren<SimpleFieldProps>> = ({
 																			  name,
-	label,
+																			  label,
 																			  helperText,
-	...restProps
+																			  ...restProps
 																		  }: React.PropsWithChildren<SimpleFieldProps>) => {
 	return (
 		<Field name={name}>
 			{({field: {value, onChange}, form: {errors}, meta}: FieldProps) => {
-				// const error = getIn(errors, name);
 				return (
 					<>
-						{/*<FormControl isInvalid={!!error}>*/}
-						{/*	{!!label && <FormLabel>{label}</FormLabel>}*/}
 							<Input
 								{...restProps}
 								name={name}
@@ -31,9 +28,6 @@ const SimpleField: React.FC<React.PropsWithChildren<SimpleFieldProps>> = ({
 									onChange(event);
 								}}
 							/>
-							{/*{!!helperText && <FormHelperText>{helperText}</FormHelperText>}*/}
-							{/*{!!error && <FormErrorMessage>{error}</FormErrorMessage>}*/}
-						{/*</FormControl>*/}
 					</>
 				);
 			}}

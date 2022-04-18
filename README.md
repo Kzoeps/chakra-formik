@@ -12,7 +12,7 @@ I know there's already a package for this but this is my experimental playground
 this is also heavily inspired (*cough (copy-pasting)*) by [formik-antd](https://github.com/jannikbuschke/formik-antd).
 
 # TODOs
-- [ ] simple input field
+- [x] simple input field
 - [ ] errors and validation for simple input field
 - [ ] select field
 - [ ] checkbox
