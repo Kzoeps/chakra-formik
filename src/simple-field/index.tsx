@@ -40,4 +40,5 @@ const SimpleField: React.FC<React.PropsWithChildren<SimpleFieldProps>> = ({
 		</Field>
 	);
 }
+export { SimpleField as Input };
 export default SimpleField;
