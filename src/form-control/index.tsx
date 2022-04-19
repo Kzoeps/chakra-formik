@@ -21,7 +21,7 @@ export const FormItem = ({children, name, label, ...restProps}: FormControlProps
 					<FormControl {...restProps} isInvalid={hasError}>
 						{label && <FormLabel data-testid="label">{label}</FormLabel>}
 						{children}
-						{hasError && <FormErrorMessage data-testid="error-msg">{error}</FormErrorMessage>}
+						{hasError && <FormErrorMessage data-testid="error-message">{error}</FormErrorMessage>}
 					</FormControl>
 				);
 			}}

@@ -14,6 +14,8 @@ const InputContainer = ({initValue = 'init value'}: {initValue?: string}) => {
 		</Formik>
 	);
 };
+const user = userEvent.setup();
+
 
 test('input should be defined', () => {
 	const {getByTestId, debug} = render(<InputContainer/>);
@@ -29,7 +31,8 @@ test('input should have an initial value of init value', () => {
 test('should change value', async () => {
 	const {getByTestId} = render(<InputContainer initValue=""/>);
 	const input = getByTestId('input-field') as HTMLInputElement;
-	await userEvent.type(input, 'new value');
+	await user.click(input);
+	await user.keyboard( 'new value');
 	await waitFor(() => expect(input.value).toBe('new value'));
 });
 
