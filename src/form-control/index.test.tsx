@@ -4,6 +4,7 @@ import FormItem from './index';
 import SimpleField from '../simple-field';
 import {render} from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import '@testing-library/jest-dom/extend-expect';
 
 interface FormContainerProps {
 	initValue?: string;
@@ -25,7 +26,7 @@ const FormContainer = ({initValue = '', label = undefined}: FormContainerProps) 
 
 test('FormItem renders correctly', () => {
 	const {getByTestId} = render(<FormContainer/>);
-	expect(getByTestId('form-item')).toBeDefined();
+	expect(getByTestId('form-item')).toBeInTheDocument();
 });
 
 test('FormItem renders label when provided', () => {
@@ -42,9 +43,9 @@ test('FormItem does not display error message if valid', async () => {
 })
 
 test('FormItem displays error message if invalid', async () => {
-	const {getByTestId, queryByTestId} = render(<FormContainer label="name"/>);
+	const {getByTestId, queryByTestId, debug} = render(<FormContainer label="name"/>);
 	const input = getByTestId('input');
-	await userEvent.type(input, 'a');
-	// await userEvent.type(input, '');
-	// expect(queryByTestId('error-message')).toBeDefined();
+	await userEvent.type(input, 'test');
+	await userEvent.clear(input);
+	expect(queryByTestId('error-message')).toBeInTheDocument();
 })

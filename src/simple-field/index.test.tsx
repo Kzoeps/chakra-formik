@@ -19,7 +19,7 @@ const user = userEvent.setup();
 
 test('input should be defined', () => {
 	const {getByTestId, debug} = render(<InputContainer/>);
-	expect(getByTestId('input-field')).toBeDefined();
+	expect(getByTestId('input-field')).toBeInTheDocument();
 });
 
 
