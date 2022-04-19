@@ -19,6 +19,8 @@ const FormContainer = ({initValue = '', label = undefined }: FormContainerProps)
 				<FormItem data-testid="form-item" label={label} name={'field'}>
 					<SimpleField data-testid="input" name={'field'}/>
 				</FormItem>
+				{/* to simulate unfocus/ blur*/}
+				<button type="submit" data-testid="submit">submit</button>
 			</Form>
 		</Formik>
 	)
@@ -46,5 +48,7 @@ test('FormItem displays error message if invalid', async () => {
 	const input = getByTestId('input') as HTMLInputElement;
 	await user.type(input, 'test');
 	await userEvent.clear(input);
+	const button = getByTestId('submit');
+	await user.click(button);
 	expect(queryByTestId('error-message')).toBeInTheDocument();
 })
