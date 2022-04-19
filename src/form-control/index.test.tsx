@@ -32,8 +32,9 @@ test('FormItem renders correctly', () => {
 });
 
 test('FormItem renders label when provided', () => {
-	const {getByTestId} = render(<FormContainer label="name"/>);
-	expect(getByTestId('label')).toBeDefined();
+	const {queryByTestId} = render(<FormContainer label="label"/>);
+	expect(queryByTestId('label')).toBeInTheDocument();
+	expect(queryByTestId('label')).toHaveTextContent('label');
 })
 
 test('FormItem does not display error message if valid', async () => {
@@ -51,4 +52,14 @@ test('FormItem displays error message if invalid', async () => {
 	const button = getByTestId('submit');
 	await user.click(button);
 	expect(queryByTestId('error-message')).toBeInTheDocument();
+})
+
+test('FormItem displays correct error message', async () => {
+	const {getByTestId, queryByTestId} = render(<FormContainer label="name"/>);
+	const input = getByTestId('input') as HTMLInputElement;
+	await user.type(input, 'test');
+	await userEvent.clear(input);
+	const button = getByTestId('submit');
+	await user.click(button);
+	expect(queryByTestId('error-message')).toHaveTextContent('Required');
 })
