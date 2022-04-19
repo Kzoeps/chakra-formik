@@ -5,7 +5,9 @@
  "main": "./lib/index.js",
  "types": "./lib/index.d.ts",
  "module": "./es/index.js",
- "keywords": [
+  "repository": "https://github.com/Kzoeps/chakra-formik",
+  "homepage": "https://github.com/Kzoeps/chakra-formik#chakra-formik",
+  "keywords": [
   "formik",
   "chakra",
   "react"
