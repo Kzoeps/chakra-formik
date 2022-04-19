@@ -31,8 +31,7 @@ test('input should have an initial value of init value', () => {
 test('should change value', async () => {
 	const {getByTestId} = render(<InputContainer initValue=""/>);
 	const input = getByTestId('input-field') as HTMLInputElement;
-	await user.click(input);
-	await user.keyboard( 'new value');
+	await user.type(input, 'new value');
 	await waitFor(() => expect(input.value).toBe('new value'));
 });
 
