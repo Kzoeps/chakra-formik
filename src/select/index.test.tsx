@@ -29,6 +29,13 @@ test('should render SelectField', () => {
 	expect(queryByTestId('select')).toBeInTheDocument();
 })
 
+test('should render options', () => {
+	const {queryByText} = render(<SelectContainer />);
+	expect(queryByText('One')).toBeInTheDocument();
+	expect(queryByText('Two')).toBeInTheDocument();
+	expect(queryByText('Three')).toBeInTheDocument();
+})
+
 test('should change value when option selected', async () => {
 	const {getByTestId,getByRole} = render(<SelectContainer />);
 	const select = getByTestId('select');
@@ -41,4 +48,12 @@ test('should display placeholder as an option', async () => {
 	const {queryByRole} = render(<SelectContainer />);
 	const placeholderOption = queryByRole('option', {name: PLACEHOLDER}) as HTMLOptionElement;
 	expect(placeholderOption).toBeInTheDocument();
+});
+
+test('should handle correct values', async () => {
+	const {getByTestId,getByRole} = render(<SelectContainer />);
+	const select = getByTestId('select');
+	await userEvent.selectOptions(select, '2');
+	const selectedOption = getByRole('option', {selected: true}) as HTMLOptionElement;
+	expect(selectedOption.value).toBe('2');
 })
