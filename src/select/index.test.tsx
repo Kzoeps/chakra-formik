@@ -17,7 +17,6 @@ const SelectContainer = () => {
 						<option value="2">Two</option>
 						<option value="3">Three</option>
 					</SelectField>
-					<button type="submit">Submit</button>
 				</Form>
 			</Formik>
 		</>
