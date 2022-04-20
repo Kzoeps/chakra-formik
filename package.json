@@ -1,13 +1,13 @@
 {
  "name": "chakra-formik",
- "version": "0.2.0",
+ "version": "0.3.0",
  "description": "a package to bind chakra ui forms with formik",
  "main": "./lib/index.js",
  "types": "./lib/index.d.ts",
  "module": "./es/index.js",
-  "repository": "https://github.com/Kzoeps/chakra-formik",
-  "homepage": "https://github.com/Kzoeps/chakra-formik#chakra-formik",
-  "keywords": [
+ "repository": "https://github.com/Kzoeps/chakra-formik",
+ "homepage": "https://github.com/Kzoeps/chakra-formik#chakra-formik",
+ "keywords": [
   "formik",
   "chakra",
   "react"
