@@ -3,7 +3,7 @@ import {ChakraProvider} from '@chakra-ui/react';
 import {Formik, Form} from 'formik';
 import SimpleField from './simple-field';
 import {FormControl} from './form-control';
-import Select from './select';
+import SelectField from './select';
 
 export function App() {
 	return <ChakraProvider>
@@ -13,11 +13,11 @@ export function App() {
 					<SimpleField name={'name'}/>
 				</FormControl>
 				<FormControl name={'age'}>
-					<Select name={'age'}>
+					<SelectField name={'age'}>
 						<option value={'1'}>1</option>
 						<option value={'2'}>2</option>
 						<option value={'3'}>3</option>
-					</Select>
+					</SelectField>
 				</FormControl>
 				{/*<SimpleField label={'Name'} name={'name'}/>*/}
 				<button type={'submit'}>Submit</button>

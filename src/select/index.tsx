@@ -7,13 +7,14 @@ export interface SelectProps {
 	children?: React.ReactNode;
 }
 
-export const Select = ({name, children}: SelectProps) => {
+export const SelectField = ({name, children, ...restProps}: SelectProps) => {
 	return (
 		<Field name={name}>
 			{({field: {value, onChange, onBlur}}: FieldProps) => {
 				return (
 					<>
 						<ChakraSelect
+							{...restProps}
 							name={name}
 							onBlur={(event) => {
 							onBlur(event);
@@ -29,4 +30,5 @@ export const Select = ({name, children}: SelectProps) => {
 	);
 };
 
-export default Select;
+export { SelectField as Select };
+export default SelectField;
