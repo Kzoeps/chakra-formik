@@ -14,6 +14,6 @@ this is also heavily inspired (*cough (copy-pasting)*) by [formik-antd](https://
 # TODOs
 - [x] simple input field
 - [x] errors and validation for simple input field
-- [ ] select field
+- [x] select field
 - [ ] checkbox
 - [ ] radio
