@@ -51,8 +51,7 @@ test('should display placeholder as an option', async () => {
 
 test('should handle correct values', async () => {
 	const {getByTestId,getByRole} = render(<SelectContainer />);
-	const select = getByTestId('select');
+	const select = getByTestId('select') as HTMLSelectElement;
 	await userEvent.selectOptions(select, '2');
-	const selectedOption = getByRole('option', {selected: true}) as HTMLOptionElement;
-	expect(selectedOption.value).toBe('2');
+	expect(select.value).toBe('2');
 })
