@@ -1,8 +1,8 @@
 import React from 'react';
-import {Select as ChakraSelect} from '@chakra-ui/react';
+import {Select as ChakraSelect, SelectProps as ChakraSelectProps} from '@chakra-ui/react';
 import {Field, FieldProps} from 'formik';
 
-export interface SelectProps {
+export interface SelectProps extends ChakraSelectProps {
 	name?: string;
 	children?: React.ReactNode;
 }
@@ -20,7 +20,8 @@ export const SelectField = ({name, children, ...restProps}: SelectProps) => {
 							onBlur(event);
 						}} onChange={(event) => {
 							onChange(event);
-						}} placeholder="Select option" value={value}>
+						}} value={['', null].includes(value) ? undefined : value}
+						>
 							{children}
 						</ChakraSelect>
 					</>

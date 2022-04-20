@@ -13,7 +13,7 @@ export function App() {
 					<SimpleField name={'name'}/>
 				</FormControl>
 				<FormControl name={'age'}>
-					<SelectField name={'age'}>
+					<SelectField placeholder="Please select option" name={'age'}>
 						<option value={'1'}>1</option>
 						<option value={'2'}>2</option>
 						<option value={'3'}>3</option>
