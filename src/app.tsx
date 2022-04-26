@@ -1,10 +1,11 @@
 import React from 'react';
-import {ChakraProvider} from '@chakra-ui/react';
+import {ChakraProvider, Radio} from '@chakra-ui/react';
 import {Formik, Form} from 'formik';
 import SimpleField from './simple-field';
 import {FormControl} from './form-control';
 import SelectField from './select';
 import * as Yup from 'yup';
+import RadioField from './radio-group';
 
 const validation = Yup.object().shape({
 	name: Yup.string().required('Required'),
@@ -13,7 +14,7 @@ const validation = Yup.object().shape({
 
 export function App() {
 	return <ChakraProvider>
-		<Formik initialValues={{name: '', age: ''}} validationSchema={validation} onSubmit={console.log}>
+		<Formik initialValues={{name: '', age: '', gender: '2'}} validationSchema={validation} onSubmit={console.log}>
 			<Form>
 				<FormControl name={'name'}>
 					<SimpleField name={'name'}/>
@@ -24,6 +25,12 @@ export function App() {
 						<option value={'2'}>2</option>
 						<option value={'3'}>3</option>
 					</SelectField>
+				</FormControl>
+				<FormControl name={'gender'}>
+					<RadioField name={'gender'}>
+						<Radio name='gender' value="1">ONE</Radio>
+						<Radio name='gender' value="2">TWO</Radio>
+					</RadioField>
 				</FormControl>
 				{/*<SimpleField label={'Name'} name={'name'}/>*/}
 				<button type={'submit'}>Submit</button>
