@@ -15,5 +15,5 @@ this is also heavily inspired (*cough (copy-pasting)*) by [formik-antd](https://
 - [x] simple input field
 - [x] errors and validation for simple input field
 - [x] select field
-- [ ] checkbox
-- [ ] radio
+- [x] checkbox group
+- [x] RadioGroup
