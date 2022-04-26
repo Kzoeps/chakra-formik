@@ -13,7 +13,7 @@ export const CheckBoxGroup = ({name, children, ...restProps}: CheckboxGroupProps
 			<Field name={name}>
 				{({field: {value}, form: {setFieldValue}}: FieldProps) => {
 					return (
-						<CheckboxGroup {...restProps} value={value} onChange={(value) => {
+						<CheckboxGroup value={value} onChange={(value) => {
 							setFieldValue(name, value);
 						}}>
 							{children}
