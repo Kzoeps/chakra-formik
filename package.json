@@ -1,6 +1,6 @@
 {
  "name": "chakra-formik",
- "version": "0.4.0",
+ "version": "0.5.0",
  "description": "a package to bind chakra ui forms with formik",
  "main": "./lib/index.js",
  "types": "./lib/index.d.ts",
@@ -20,10 +20,10 @@
   "es"
  ],
  "scripts": {
-   "start": "parcel src/index.html -p 3000 --open",
-   "test": "jest",
-   "minitest": "jest -o",
-   "build": "tsc && tsc -p tsconfig.es.json"
+  "start": "parcel src/index.html -p 3000 --open",
+  "test": "jest",
+  "minitest": "jest -o",
+  "build": "tsc && tsc -p tsconfig.es.json"
  },
  "dependencies": {},
  "peerDependencies": {
