@@ -23,7 +23,8 @@
     "start": "parcel src/index.html -p 3000 --open",
     "test": "jest",
     "minitest": "jest -o",
-    "build": "tsc && tsc -p tsconfig.es.json"
+    "build": "tsc && tsc -p tsconfig.es.json",
+    "prettier": "prettier --write ."
   },
   "dependencies": {},
   "peerDependencies": {
