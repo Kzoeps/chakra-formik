@@ -1,8 +1,8 @@
-import {FormControl, FormErrorMessage, FormLabel} from '@chakra-ui/react';
+import {FormControl, FormErrorMessage, FormLabel, FormControlProps as ChakraFormControlProps } from '@chakra-ui/react';
 import {Field, FieldProps, getIn} from 'formik';
 import React from 'react';
 
-export interface FormControlProps {
+export interface FormControlProps extends ChakraFormControlProps {
 	name: string;
 	label?: string;
 	validate?: string;
