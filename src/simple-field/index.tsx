@@ -4,15 +4,10 @@ import React from "react";
 
 export interface SimpleFieldProps extends InputProps {
   name: string;
-  label?: string;
-  validate?: string;
-  helperText?: string;
 }
 
 const SimpleField: React.FC<React.PropsWithChildren<SimpleFieldProps>> = ({
   name,
-  label,
-  helperText,
   ...restProps
 }: React.PropsWithChildren<SimpleFieldProps>) => {
   return (

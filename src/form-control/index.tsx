@@ -10,8 +10,6 @@ import React from "react";
 export interface FormControlProps extends ChakraFormControlProps {
   name: string;
   label?: string;
-  validate?: string;
-  helperText?: string;
   children: React.ReactNode;
 }
 
