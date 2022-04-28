@@ -30,22 +30,7 @@ const RadioContainer = () => {
   );
 };
 
-test("should render radio container", () => {
-  const { queryByTestId } = render(<RadioContainer />);
-  expect(queryByTestId("radio")).toBeInTheDocument();
-});
-
-test("should render radio boxes", () => {
+test("should render radio options", () => {
   const { queryAllByTestId } = render(<RadioContainer />);
   expect(queryAllByTestId("radio-box")).toHaveLength(3);
-});
-
-test("should change value on click", async () => {
-  const { getByRole, getByTestId, debug } = render(<RadioContainer />);
-  // const radio = getByRole('radio', {name: 'One'});
-  // await user.click(radio);
-  // expect(radio).toBeChecked();
-  debug();
-  const radioGroup = getByTestId("radio") as HTMLSelectElement;
-  expect(radioGroup.value).toBe("1");
 });
