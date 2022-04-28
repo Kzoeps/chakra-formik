@@ -6,7 +6,7 @@
   "types": "./lib/index.d.ts",
   "module": "./es/index.js",
   "repository": "https://github.com/Kzoeps/chakra-formik",
-  "homepage": "https://github.com/Kzoeps/chakra-formik#chakra-formik",
+  "homepage": "https://chakra-formik-docs.vercel.app/",
   "keywords": [
     "formik",
     "chakra",
