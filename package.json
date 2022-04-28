@@ -1,58 +1,61 @@
 {
- "name": "chakra-formik",
- "version": "0.2.0",
- "description": "a package to bind chakra ui forms with formik",
- "main": "./lib/index.js",
- "types": "./lib/index.d.ts",
- "module": "./es/index.js",
- "keywords": [
-  "formik",
-  "chakra",
-  "react"
- ],
- "author": "kzoeps <kzoepa@gmail.com>",
- "license": "MIT",
- "files": [
-  "lib",
-  "src",
-  "es"
- ],
- "scripts": {
-  "start": "parcel src/index.html -p 3000 --open",
-  "test": "jest",
-   "minitest": "jest -o",
-  "build": "tsc && tsc -p tsconfig.es.json"
- },
- "dependencies": {},
- "peerDependencies": {
-  "@chakra-ui/react": "^1.8.7",
-  "@emotion/react": "^11",
-  "@emotion/styled": "^11",
-  "formik": "^2.2.9",
-  "framer-motion": "^6",
-  "react": "^17.0.0",
-  "react-dom": "^17.0.0"
- },
- "devDependencies": {
-  "@chakra-ui/react": "^1.8.7",
-  "@emotion/react": "^11",
-  "@emotion/styled": "^11",
-  "@jest/types": "^27.5.1",
-  "@testing-library/jest-dom": "^5.16.4",
-  "@testing-library/react": "^12.1.2",
-  "@testing-library/user-event": "^14.1.0",
-  "@types/react": "^18.0.0",
-  "@types/react-dom": "^18.0.0",
-  "formik": "^2.2.9",
-  "framer-motion": "^6",
-  "jest": "^27.5.1",
-  "parcel": "^2.4.1",
-  "process": "^0.11.10",
-  "react": "^17.0.0",
-  "react-dom": "^17.0.0",
-  "ts-jest": "^27.1.4",
-  "ts-node": "^10.7.0",
-  "typescript": "^4.6.3",
-  "yup": "^0.32.11"
- }
+  "name": "chakra-formik",
+  "version": "0.5.0",
+  "description": "a package to bind chakra ui forms with formik",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "module": "./es/index.js",
+  "repository": "https://github.com/Kzoeps/chakra-formik",
+  "homepage": "https://github.com/Kzoeps/chakra-formik#chakra-formik",
+  "keywords": [
+    "formik",
+    "chakra",
+    "react"
+  ],
+  "author": "kzoeps <kzoepa@gmail.com>",
+  "license": "MIT",
+  "files": [
+    "lib",
+    "src",
+    "es"
+  ],
+  "scripts": {
+    "start": "parcel src/index.html -p 3000 --open",
+    "test": "jest",
+    "minitest": "jest -o",
+    "build": "tsc && tsc -p tsconfig.es.json"
+  },
+  "dependencies": {},
+  "peerDependencies": {
+    "@chakra-ui/react": "^1.8.7",
+    "@emotion/react": "^11",
+    "@emotion/styled": "^11",
+    "formik": "^2.2.9",
+    "framer-motion": "^6",
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0"
+  },
+  "devDependencies": {
+    "@chakra-ui/react": "^1.8.7",
+    "@emotion/react": "^11",
+    "@emotion/styled": "^11",
+    "@jest/types": "^27.5.1",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^12.1.2",
+    "@testing-library/user-event": "^14.1.0",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "formik": "^2.2.9",
+    "framer-motion": "^6",
+    "jest": "^27.5.1",
+    "parcel": "^2.4.1",
+    "prettier": "^2.6.2",
+    "process": "^0.11.10",
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0",
+    "ts-jest": "^27.1.4",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.3",
+    "yup": "^0.32.11"
+  }
 }
